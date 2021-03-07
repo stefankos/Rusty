@@ -1,0 +1,1 @@
+{"parser_type":"2G","timestamp":"2020-01-01","path_ftp":["dasdas","dsadada"],"path_app":"c:\\dsad","path_zip":"c:\\dsad","path_log":"c:\\dsad","path_unzip":"c:\\dsad"}
