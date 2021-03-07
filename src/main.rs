@@ -16,7 +16,7 @@ struct Input {
 }
 
 
-fn main() -> Result<(), Error> {
+fn main() -> Result<(), Box<dyn std::error::Error>>{
     let parser = Input{
         parser_type: String::from("2G"),
         timestamp: String::from("2020-01-01"),
