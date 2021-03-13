@@ -1,0 +1,1 @@
+{"parser_type":"3G","timestamp":"2020-01-01","ftp_files_pattern":["^LTE_SITES.*_[0-9]{8}.tar.gz","^A_ZIPED.*RNC[0-9].*_[0-9]{8}.tar.gz"],"path_app":"c:\\dsad","path_zip":"c:\\dsad","path_log":"c:\\dsad","path_unzip":"c:\\dsad"}
