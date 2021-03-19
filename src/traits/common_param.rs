@@ -1,4 +1,4 @@
-// pub trait  CommonParam {
+// pub trait  Parser {
 //     fn get_parser_type(&self)->String;
 //     fn get_timestamp(&self)->String;
 //     fn get_ftp_path(&self)->Vec<String>;

@@ -1,4 +1,4 @@
-use std::{error::Error, io::{BufRead, Read, Write}};
+use std::{collections::HashMap, error::Error, io::{BufRead, Read, Write}};
 use std::fs::File;
 use std::io::BufReader;
 use ftp::{FtpStream};
@@ -154,3 +154,36 @@ fn lines_from_file1(filename: &str) -> std::io::Result<Vec<String>> {
     Ok(file.lines().map(|x| x.unwrap()).collect())
 }
 
+pub fn split_text(text:&str, delimiter:&str)->Vec<String> {
+    text.trim()
+        .split(delimiter)
+        .filter(|&k|!k.is_empty())
+        .map(|k| k.trim().to_string())
+        .collect::<Vec<String>>()
+}
+
+fn get_counter_names(file_path:&str)-> Result<HashMap<String,String>,Box<dyn Error>>{
+    let mut dic : HashMap::<String,String> = HashMap::new();
+    let counter_name = BufReader::new(File::open(file_path)?).lines();
+        
+    let split = counter_name
+        .map(|n| 
+            n.unwrap()
+            .split('|')
+            .map(str::to_owned)
+            .collect::<Vec<_>>());
+     
+    for n in split{
+        if n.len() == 3 {
+            let key = n[1..2].first().unwrap().to_string();
+
+            match dic.contains_key(&key) {
+                true => dic.insert(key, n.last().unwrap().to_string()),
+                false=> return Err(format!("fdsfds {}", key).into())
+            };
+
+        }
+    }
+
+    Ok(dic)
+}

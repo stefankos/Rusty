@@ -1,1 +1,1 @@
-{"parser_type":"4G","timestamp":"2020-01-01","ftp_files_pattern":["^LTE_SITES.*_[0-9]{8}.tar.gz"],"path_app":"c:\\dsad","path_zip":"c:\\dsad","path_log":"c:\\dsad","path_unzip":"c:\\dsad"}
+{"parser_type":"4G","timestamp":"2020-01-01","ftp_files_pattern":["^LTE_SITES.*_[0-9]{8}.tar.gz"],"path_app":"c:\\dsad","path_zip":"c:\\dsad","path_log":"c:\\dsad","path_unzip":"c:\\dsad","path_pm_file":"/Users/stefanvelinov/PycharmProjects/RustXmlParsers/4G_PmNames.txt","path_counte_name_file":"/Users/stefanvelinov/PycharmProjects/RustXmlParsers/4G_CounterNames.txt"}

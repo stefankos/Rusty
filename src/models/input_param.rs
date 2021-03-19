@@ -6,5 +6,7 @@ pub struct InputParam {
     pub path_app:String,
     pub path_zip:String,
     pub path_log:String,
-    pub path_unzip:String
+    pub path_unzip:String,
+    pub path_pm_file:String,
+    pub path_counte_name_file:String
 }

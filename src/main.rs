@@ -7,6 +7,7 @@ use chrono::Duration;
 use cli::Cli;
 use structopt::StructOpt;
 #[path="./models/ftp_config.rs"] mod ftp_config;
+#[path="./models/pm.rs"] mod pm;
 #[path="./enums/enum_parser_type.rs"] mod enum_parser_type;
 #[path="./models/input_param.rs"] mod input_param;
 mod models {
@@ -14,39 +15,15 @@ mod models {
     pub(crate) mod parser_umts;
 }
 
-fn test() {
-    let mut data:Vec<&str> = Vec::<&str>::new();
-    let xyz = ["dffs","fdsfdsf","fdsfdsfs"];
-
-    for x in xyz.iter() {
-      let val = format!("hello {}", x); // creating new string
-      data.push(&val); // getting string slice!
-    }
-    
-    for m in data {
-        println!("{}",m);
-    }
-  }
-
 
 fn main() -> Result<(),Box<dyn std::error::Error>>{
     
-    test();
-
 
     
     let pm_file = BufReader::new(File::open("/Users/stefanvelinov/PycharmProjects/RustXmlParsers/2G_PmNames.txt")?).lines().collect::<Vec<_>>();
 
     let counter_name = BufReader::new(File::open("/Users/stefanvelinov/PycharmProjects/RustXmlParsers/2G_CounterNames.txt")?).lines();
-    let mut hash : HashMap::<String,String> = HashMap::new();
-    let split = counter_name
-        .map(|n| 
-            n.unwrap()
-            .split('|')
-            .map(str::to_owned)
-            .collect::<Vec<_>>());
-
-
+    
     // 1. Get input params from console
     let input_param = Cli::from_args_safe();
 
